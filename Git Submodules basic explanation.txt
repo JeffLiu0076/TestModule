@@ -1,0 +1,18 @@
+Adding a submodule
+You can add a submodule to a repository like this:
+
+git submodule add git@github.com:url_to/awesome_submodule.git path_to_awesome_submodule
+
+Getting the submodule's code
+If a new submodule is created by one person, the other people in the team need to initiate this submodule. First you have to get the information about the submodule, this is retrieved by a normal git pull. If there are new submodules you'll see it in the output of git pull. Then you'll have to initiate them with:
+
+git submodule init
+
+Keeping your submodules up-to-date
+If someone updated a submodule, the other team-members should update the code of their submodules. This is not automatically done by git pull, because with git pull it only retrieves the information that the submodule is pointing to another commit, but doesn't update the submodule's code. To update the code of your submodules, you should run:
+
+git submodule update --remote
+
+
+
+then commit to the main repository for the update of the submodule
